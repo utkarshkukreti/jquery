@@ -584,6 +584,15 @@ test("slice()", function() {
 	same( $links.eq(-1).get(), q("mark"), "eq(-1)" );
 });
 
+test("reverse", function() {
+	expect(2)
+
+	var $links = jQuery("#ap a");
+
+	same( $links.reverse().get(), q("mark", "anchor1", "groups", "google") );
+	same( $links.get(), $links.reverse().reverse().get() );
+});
+
 test("first()/last()", function() {
 	expect(4);
 
